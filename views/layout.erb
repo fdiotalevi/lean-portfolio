@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Filippo Diotalevi</title>
+  <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />	
+</head>
+<body>
+
+<div id="header">
+  Filippo Diotalevi
+</div>
+
+<div id="menu">
+  <div class="item">
+    <a href="/">Home</a>
+  </div>
+</div>
+
+<table>
+  <tr>
+    <td id="left-column">
+      <h1>Projects</h1>
+    
+      <% @projects.each do |project| %>
+      <div class="project"><a href='/collection/<%=project.safe_name %>'><%=project.name %></a></div>
+      <% end %>
+    </td>
+    
+    
+    <td id="content">
+      <%= yield %> 
+    </td>
+  </tr>
+</table>  
+</body>
+</html>

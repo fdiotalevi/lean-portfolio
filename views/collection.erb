@@ -1,0 +1,21 @@
+<h1><%= @project.name %></h1>
+
+
+<table>
+<div id="photos">
+    <tr>  
+  <% @project.photos.each do |photo| %>
+      <td class="photo">
+        <img src="<%= photo.url %>"/>
+        
+        <br>
+        
+        <% if photo.comment %>
+          <div class="comment">
+            <%= photo.comment %>
+          </div>
+        <% end %>  
+      </td>
+  <% end %>
+    </tr>
+</div>
